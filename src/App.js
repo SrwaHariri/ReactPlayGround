@@ -10,17 +10,48 @@ class App extends Component {
       { name: "parycka", age: 3 }
     ]
   };
+  switchNameHandler = newName => {
+    // console.log("clicked!");
+    // DON'T DO THIS: this.state.persons[0].name="someNewName"
+    this.setState({
+      persons: [
+        { name: newName, age: 34 },
+        { name: "daya", age: 28 },
+        { name: "parygull", age: 4 }
+      ]
+    });
+  };
+  nameChangeHandler = event => {
+    this.setState({
+      persons: [
+        { name: "bestoun", age: 34 },
+        { name: event.target.value, age: 28 },
+        { name: "parygull", age: 3 }
+      ]
+    });
+  };
   render() {
     return (
       <div className="App">
         <h1> Hi, iam areact app</h1>
+        <button
+          onClick={this.switchNameHandler.bind(this, "bawa")}
+          className="button-style"
+        >
+          Switch names
+        </button>
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
         />
         <Person
+          className="person1"
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
+          // this is for changing the array index[0] wich is the first person
+          //the bind is for binding th evalue of newName in switch handler method
+          blik={this.switchNameHandler.bind(this, "bawa aziz")}
+          changed={this.nameChangeHandler}
         />
         <Person
           name={this.state.persons[2].name}
