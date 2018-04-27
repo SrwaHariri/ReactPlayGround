@@ -2,9 +2,9 @@
   text-align: center;
 }
 .button-style {
-  border: 3px solid pink;
-  border-radius: 4px;
-  background: palevioletred;
+  border: 3px solid #34495e;
+  border-radius: 20px;
+  background: #73c6b6;
   cursor: pointer;
 }
 .person1 {
