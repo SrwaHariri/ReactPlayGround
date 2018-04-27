@@ -31,9 +31,12 @@ class App extends Component {
     });
   };
   render() {
+    const someStyle = {
+      color: "#f0b27a"
+    };
     return (
       <div className="App">
-        <h1> Hi, iam areact app</h1>
+        <h1 style={someStyle}> Hi, iam areact app</h1>
         <button
           onClick={this.switchNameHandler.bind(this, "bawa")}
           className="button-style"
