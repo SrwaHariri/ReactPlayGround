@@ -8,7 +8,8 @@ class App extends Component {
       { name: "bestoun", age: 34 },
       { name: "srwa", age: 28 },
       { name: "parycka", age: 3 }
-    ]
+    ],
+    showPersons: false
   };
   switchNameHandler = newName => {
     // console.log("clicked!");
@@ -30,6 +31,11 @@ class App extends Component {
       ]
     });
   };
+
+  togglePersonHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({ showPersons: !doesShow });
+  };
   render() {
     const someStyle = {
       color: "#f0b27a"
@@ -37,31 +43,32 @@ class App extends Component {
     return (
       <div className="App">
         <h1 style={someStyle}> Hi, iam areact app</h1>
-        <button
-          onClick={this.switchNameHandler.bind(this, "bawa")}
-          className="button-style"
-        >
+        <button onClick={this.togglePersonHandler} className="button-style">
           Switch names
         </button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person
-          className="person1"
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          // this is for changing the array index[0] wich is the first person
-          //the bind is for binding th evalue of newName in switch handler method
-          blik={this.switchNameHandler.bind(this, "bawa aziz")}
-          changed={this.nameChangeHandler}
-        />
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        >
-          i want to be a ballerina
-        </Person>
+        {this.state.showPersons === true ? (
+          <div>
+            <Person
+              name={this.state.persons[0].name}
+              age={this.state.persons[0].age}
+            />
+            <Person
+              className="person1"
+              name={this.state.persons[1].name}
+              age={this.state.persons[1].age}
+              // this is for changing the array index[0] wich is the first person
+              //the bind is for binding th evalue of newName in switch handler method
+              blik={this.switchNameHandler.bind(this, "bawa aziz")}
+              changed={this.nameChangeHandler}
+            />
+            <Person
+              name={this.state.persons[2].name}
+              age={this.state.persons[2].age}
+            >
+              i want to be a ballerina
+            </Person>
+          </div>
+        ) : null}
       </div>
     );
     /* return React.createElement(
