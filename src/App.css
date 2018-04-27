@@ -6,6 +6,7 @@
   border-radius: 20px;
   background: #73c6b6;
   cursor: pointer;
+  outline: none;
 }
 .person1 {
   text-decoration-line: underline;
