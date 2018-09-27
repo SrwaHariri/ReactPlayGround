@@ -9,12 +9,6 @@ class App extends Component {
        <Form />
      </div>
     );
-    /* return React.createElement(
-       "div",
-       { className: "App" },
-       React.createElement("h1", null, "yolo")
-    );
-    */
   }
 }
 
