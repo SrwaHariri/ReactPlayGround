@@ -38,45 +38,52 @@ class Form extends Component {
     });
   };
 
+  
 
   render() {
     const someStyle = {
       color: "#f0b27a"
     };
+    let persons =null;
+  if (this.state.showPersons){
+    persons = (
+      <div>
+      <Person
+        name={this.state.persons[0].name}
+        age={this.state.persons[0].age}
+      />
+      <Person
+     
+        name={this.state.persons[1].name}
+        age={this.state.persons[1].age}
+        // this is for changing the array index[0] wich is the first person
+       >
+        <Input changed={this.nameChangeHandler} /> 
+        u can also change this one by typing new name
+       </Person>
+      <Person
+         className="person1"
+        name={this.state.persons[2].name}
+        age={this.state.persons[2].age}
+
+       //the bind is for binding th evalue of newName in switch handler method
+        blik={this.switchNameHandler.bind(this, "peppa pig")}
+       //we dont add paranthesis because we dont want to exectute the fuction right away we just want to pass a refrence to that function  
+      >
+     click to change the cards content
+      </Person>
+    </div>
+    );
+  }
     return (
       <div className="App">
         <h1 style={someStyle}> Srwa's React PlayGround</h1>
         <button onClick={this.toggleCardsHandler} className="button-style">
           Toggle cards 
         </button>
-        {this.state.showPersons === true ? (
-          <div>
-            <Person
-              name={this.state.persons[0].name}
-              age={this.state.persons[0].age}
-            />
-            <Person
-           
-              name={this.state.persons[1].name}
-              age={this.state.persons[1].age}
-              // this is for changing the array index[0] wich is the first person
-             >
-              <Input changed={this.nameChangeHandler} /> 
-              u can also change this one by typing new name
-             </Person>
-            <Person
-               className="person1"
-              name={this.state.persons[2].name}
-              age={this.state.persons[2].age}
-
-             //the bind is for binding th evalue of newName in switch handler method
-              blik={this.switchNameHandler.bind(this, "peppa pig")}
-             //we dont add paranthesis because we dont want to exectute the fuction right away we just want to pass a refrence to that function  
-            >
-           click to change the cards content
-            </Person>
-          </div>
-        ) : null}
+     
+        {persons} 
+     
       </div>
     );
     /* return React.createElement(
