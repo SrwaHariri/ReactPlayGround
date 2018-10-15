@@ -1,24 +1,30 @@
 import React, { Component } from "react";
 import "./form.css";
 import Person from "../Person/Person";
+import Input from "../Inputs/Inputs";
 
 class Form extends Component {
   state = {
+    //some data to start with 
     persons: [
-      { name: "bestoun", age: 34 },
-      { name: "srwa", age: 28 },
-      { name: "parycka", age: 3 }
+      { name: "Bestoun" ,age:34},
+      { name: "Srwa" ,age:28 },
+      { name: "pary",age:4}
     ],
     showPersons: false
+  };
+  toggleCardsHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({ showPersons: !doesShow });
   };
   switchNameHandler = newName => {
     // console.log("clicked!");
     // DON'T DO THIS: this.state.persons[0].name="someNewName"
     this.setState({
       persons: [
-        { name: newName, age: 34 },
-        { name: "daya", age: 28 },
-        { name: "parygull", age: 4 }
+        { name: newName },
+        { name: "rebeca  ", age: "rabit" },
+        { name: "suzy", age: "sheep" }
       ]
     });
   };
@@ -32,19 +38,16 @@ class Form extends Component {
     });
   };
 
-  togglePersonHandler = () => {
-    const doesShow = this.state.showPersons;
-    this.setState({ showPersons: !doesShow });
-  };
+
   render() {
     const someStyle = {
       color: "#f0b27a"
     };
     return (
       <div className="App">
-        <h1 style={someStyle}> Hi, iam areact app</h1>
-        <button onClick={this.togglePersonHandler} className="button-style">
-          Switch names
+        <h1 style={someStyle}> Srwa's React PlayGround</h1>
+        <button onClick={this.toggleCardsHandler} className="button-style">
+          Toggle cards 
         </button>
         {this.state.showPersons === true ? (
           <div>
@@ -53,19 +56,24 @@ class Form extends Component {
               age={this.state.persons[0].age}
             />
             <Person
-              className="person1"
+           
               name={this.state.persons[1].name}
               age={this.state.persons[1].age}
               // this is for changing the array index[0] wich is the first person
-              //the bind is for binding th evalue of newName in switch handler method
-              blik={this.switchNameHandler.bind(this, "bawa aziz")}
-              changed={this.nameChangeHandler}
-            />
+             >
+              <Input changed={this.nameChangeHandler} /> 
+              u can also change this one by typing new name
+             </Person>
             <Person
+               className="person1"
               name={this.state.persons[2].name}
               age={this.state.persons[2].age}
+
+             //the bind is for binding th evalue of newName in switch handler method
+              blik={this.switchNameHandler.bind(this, "peppa pig")}
+             //we dont add paranthesis because we dont want to exectute the fuction right away we just want to pass a refrence to that function  
             >
-              i want to be a ballerina
+           click to change the cards content
             </Person>
           </div>
         ) : null}
