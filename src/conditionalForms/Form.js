@@ -42,7 +42,7 @@ class Form extends Component {
     };
     return (
       <div className="App">
-        <h1 style={someStyle}> Hi, iam areact app</h1>
+        <h1 style={someStyle}> React PlayGround</h1>
         <button onClick={this.togglePersonHandler} className="button-style">
           Switch names
         </button>

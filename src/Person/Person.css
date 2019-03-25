@@ -1,11 +1,11 @@
 .Person {
-  border: 6px solid #f0b27a;
+  border: 6px solid teal;
   border-radius: 20px;
   box-shadow: 0 2px 3px #ccc;
-  background: #34495e;
+  background: #0a0d28;
   margin: 16px auto;
   padding: 20px;
-  width: 30%;
+  width: 40%;
   color: white;
 }
 .input {
