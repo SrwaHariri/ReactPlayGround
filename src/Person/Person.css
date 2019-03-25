@@ -2,14 +2,14 @@
   border: 6px solid teal;
   border-radius: 20px;
   box-shadow: 0 2px 3px #ccc;
+<<<<<<< HEAD
   background: #0a0d28;
   margin: 16px auto;
+=======
+  background: #34495e;
+  margin: 16px ;
+>>>>>>> 874790538ab0fdb6d0321323198d7af727c6d144
   padding: 20px;
   width: 40%;
   color: white;
-}
-.input {
-  border-radius: 5px;
-  border: none;
-  outline: none;
 }

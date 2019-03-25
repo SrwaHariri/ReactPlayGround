@@ -3,16 +3,11 @@ import "./Person.css";
 const person = props => {
   return (
     <div className="Person">
+  {/* saying that this paragraph will accept function in future*/}
       <p onClick={props.blik} className={props.className}>
-        Hi, my name is {props.name} and iam {props.age} years old
+        {props.name} {props.age} 
       </p>
-      <p>{props.children}</p>
-      <input
-        className="input"
-        type="text"
-        onChange={props.changed}
-        value={props.name}
-      />
+      <p >{props.children} </p>
     </div>
   );
 };
