@@ -23,6 +23,7 @@ class Api extends React.Component {
       <h3>getting list of persons using axios get ApI call </h3>
         { this.state.persons.map(person => <li>{person.name}</li>)}
       </ul>
+      <h3>axios post method</h3>
       <ApiPost />
       </div>
     )
