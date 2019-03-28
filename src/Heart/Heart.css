@@ -1,10 +1,10 @@
 .heart {
     position: absolute;
-    margin: auto;
+    margin: 300px 10px 0  800px;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 10px;
     background-color: rgb(219, 35, 121);
     height: 50px;
     width: 50px;

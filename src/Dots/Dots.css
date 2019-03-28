@@ -1,0 +1,31 @@
+.loader-wrapper{
+display: flex;
+margin: 110px 0px 0px 30px; 
+padding: 25px
+}
+.dot-loader {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color:  #03A9F4 ;
+    position: relative;
+    animation: 1.2s grow ease-in-out infinite;
+  }
+  
+  .dot-loader--2 {
+    animation: 1.2s grow ease-in-out infinite 0.15555s;
+    margin: 0 20px;
+  }
+  .dot-loader--3 {    
+    animation: 1.2s grow ease-in-out infinite 0.3s;
+  }
+  @keyframes grow {
+    0%, 40%, 100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }

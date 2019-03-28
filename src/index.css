@@ -1,7 +1,22 @@
 body {
   margin: 0;
   padding: 0;
-  background: #0a0d28;
+  /* background: #0a0d28; */
   font-family: sans-serif;
 }
 /* background: #000430; */
+
+.navigation{
+background: #000430;
+color: white;
+display: flex;
+height: 25px;
+justify-content: space-around;
+text-align: center;
+padding: 20px
+}
+a:-webkit-any-link {
+  color: white;
+  
+  text-decoration:none;
+}

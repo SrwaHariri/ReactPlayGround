@@ -1,0 +1,29 @@
+.cs-container{ 
+
+ 
+    
+    }
+    .container{
+        border:15px solid #f3f3f3;
+        border-radius:50%;
+        height:200px;
+        width:200px;
+        animation: spin 2s linear infinite;
+        background-color:#f3f3f3;
+        }
+    
+    
+     .loader {
+        border: 16px solid #fa2170;
+        border-top: 16px solid#fa2170; 
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    
+    }
+    
+    @keyframes spin {
+        100% { transform: rotate(0deg); }
+        0% { transform: rotate(360deg); }
+    }
